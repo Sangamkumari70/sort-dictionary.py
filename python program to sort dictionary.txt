@@ -1,0 +1,21 @@
+# write a python program to sort a list of dictionay by specific keys
+
+# Function to sort a list of dictionaries by a specific key
+def sort_dict(data, sort_key):
+    for i in range(len(data)):
+        for j in range(len(data) - i - 1):
+            if data[j][sort_key] > data[j + 1][sort_key]:
+                data[j], data[j + 1] = data[j + 1], data[j]
+    return data
+
+# Input list of dictionaries
+data = [{"name": "sangam", "age": 21, "score": 60},
+        {"name": "abc", "age": 22, "score": 30},
+        {"name": "xyz", "age": 20, "score": 70}]
+
+# Key to sort by
+sort_key = "name"
+
+# Sorting the list of dictionaries
+sorted_data = sort_dict(data, sort_key)
+print("Sorted Data:", sorted_data)
